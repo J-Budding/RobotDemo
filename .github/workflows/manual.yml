@@ -19,7 +19,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow will execute a robot test
-  greet:
+  RunRobotTest:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -28,6 +28,12 @@ jobs:
 
     - name: Pip install robotframework
       run: pip install robotframework
+
+    - name: Show working directory
+      run: pwd
+
+    - name: List directory
+      run: ls -la
 
     - name: Execute robot 
       run: robot keyword_driven.robot
