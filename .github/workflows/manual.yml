@@ -29,6 +29,9 @@ jobs:
     - name: Pip install robotframework
       run: pip install robotframework
 
+    - name: Checkout the repo
+      uses: actions/checkout@v3
+
     - name: Show working directory
       run: pwd
 
