@@ -20,12 +20,25 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Execute tests
-        uses: joonvena/robotframework-docker-action@v1.0
-      - name: Upload test results
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: reports
-          path: reports
+    - name: Pip install robotframework
+      run: pip install robotframework
+
+    - name: Checkout the repo
+      uses: actions/checkout@v3
+
+    - name: Show working directory
+      run: pwd
+
+    - name: List directory
+      run: ls -la
+
+    - name: Execute robot test
+      run: robot keyword_driven.robot
+
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v1
+      if: always()
+      with:
+        name: reports
+        path: reports
