@@ -41,4 +41,4 @@ jobs:
       if: always()
       with:
         name: reports
-        path: /home/runner/work/RobotDemo/RobotDemo
+        path: /home/runner/work/RobotDemo/RobotDemo/report.html
